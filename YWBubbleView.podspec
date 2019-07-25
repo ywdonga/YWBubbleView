@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "YWBubbleView"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "可以拖拽的悬浮气泡，可以放置于Alert上层"
 
   # This description is used to generate tags and improve search results.
@@ -53,7 +53,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "Dyw" => "dongyouweie@126.com" }
+  spec.author             = { "Dyw" => "329720990@qq.com" }
   # Or just: spec.author    = "Dyw"
   # spec.authors            = { "Dyw" => "dongyouweie@126.com" }
   # spec.social_media_url   = "https://twitter.com/Dyw"
@@ -92,7 +92,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.source_files  = "YWBubbleViewDemo/YWBubbleViewDemo/YWBubbleView/*.swift"
-  # spec.exclude_files = "YWBubbleViewDemo"
+  spec.exclude_files = "YWBubbleView"
 
   # spec.public_header_files = "Classes/**/*.h"
 
