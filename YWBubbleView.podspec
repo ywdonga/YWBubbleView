@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "YWBubbleView"
-  spec.version      = "1.0.2"
+  spec.version      = "1.0.3"
   spec.summary      = "可以拖拽的悬浮气泡，可以放置于Alert上层"
 
   # This description is used to generate tags and improve search results.
