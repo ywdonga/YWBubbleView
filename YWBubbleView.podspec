@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "YWBubbleView"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "可以拖拽的悬浮气泡，可以放置于Alert上层"
 
   # This description is used to generate tags and improve search results.
@@ -94,7 +94,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "YWBubbleViewDemo/YWBubbleViewDemo/YWBubbleView/*.swift"
   spec.exclude_files = "YWBubbleView"
 
-  # spec.public_header_files = "Classes/**/*.h"
+  spec.public_header_files = "YWBubbleViewDemo/YWBubbleViewDemo/YWBubbleView/*.swift"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
