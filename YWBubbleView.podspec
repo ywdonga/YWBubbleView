@@ -91,10 +91,10 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "YWBubbleViewDemo/YWBubbleViewDemo/YWBubbleView/*.swift"
+  spec.source_files  = "YWBubbleViewDemo/*/*/*.swift"
   spec.exclude_files = "YWBubbleView"
 
-  spec.public_header_files = "YWBubbleViewDemo/YWBubbleViewDemo/YWBubbleView/*.swift"
+  # spec.public_header_files = "YWBubbleViewDemo/YWBubbleViewDemo/YWBubbleView/YWBubbleView.swift"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

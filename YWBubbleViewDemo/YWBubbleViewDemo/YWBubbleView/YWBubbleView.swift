@@ -10,12 +10,12 @@ import UIKit
 
 private let YWKeyWindow = UIApplication.shared.windows[0]
 
-enum YWBubblePosition {
+public enum YWBubblePosition {
     case Left
     case Right
 }
 
-class YWBubbleView: UIView {
+public class YWBubbleView: UIView {
     
     private var contentView : UIView?
     private var marginInsets = UIEdgeInsets.zero
@@ -132,7 +132,7 @@ class YWBubbleView: UIView {
     }
 }
 
-class YWBubbleWindow: UIWindow {
+public class YWBubbleWindow: UIWindow {
 
     private var contentView : UIView?
     private var marginInsets = UIEdgeInsets.zero
