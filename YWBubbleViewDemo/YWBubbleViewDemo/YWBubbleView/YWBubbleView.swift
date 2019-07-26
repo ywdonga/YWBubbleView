@@ -21,12 +21,12 @@ public class YWBubbleView: UIView {
     private var marginInsets = UIEdgeInsets.zero
     private var tapBlock : (()->Void)?
     
-    var position = YWBubblePosition.Left {
+    public var position = YWBubblePosition.Left {
         didSet{
             updatePosition()
         }
     }
-    var positionY : CGFloat = 0.0{
+    public var positionY : CGFloat = 0.0{
         didSet{
             updatePosition()
         }
@@ -38,7 +38,7 @@ public class YWBubbleView: UIView {
     ///   - customView: 要显示的View
     ///   - margin: 外边距
     ///   - backBlock: 点击回调
-    init(customView: UIView, margin:UIEdgeInsets?, backBlock:(()->Void)?) {
+    public init(customView: UIView, margin:UIEdgeInsets?, backBlock:(()->Void)?) {
         super.init(frame: customView.bounds)
         if margin != nil {
             marginInsets = margin!
@@ -63,11 +63,11 @@ public class YWBubbleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func show(atView:UIView) {
+    public func show(atView:UIView) {
         atView.addSubview(self)
     }
     
-    func hidden() {
+    public func hidden() {
         removeFromSuperview()
     }
     
@@ -75,7 +75,7 @@ public class YWBubbleView: UIView {
         tapBlock?()
     }
     
-    @objc func panEvent(pan:UIPanGestureRecognizer) {
+    @objc private func panEvent(pan:UIPanGestureRecognizer) {
         let point = pan.location(in: self)
         locationChange(point: point)
         if pan.state == UIGestureRecognizer.State.ended {
@@ -95,7 +95,7 @@ public class YWBubbleView: UIView {
         center = newCenter;
     }
     
-    func locationChangeEnded() {
+    private func locationChangeEnded() {
         guard superview != nil else {
             return
         }
@@ -110,7 +110,7 @@ public class YWBubbleView: UIView {
         }
     }
     
-    func updatePosition() {
+    private func updatePosition() {
         guard superview != nil else {
             return
         }
@@ -138,12 +138,12 @@ public class YWBubbleWindow: UIWindow {
     private var marginInsets = UIEdgeInsets.zero
     private var tapBlock : (()->Void)?
     
-    var position = YWBubblePosition.Left {
+    public var position = YWBubblePosition.Left {
         didSet{
             updatePosition()
         }
     }
-    var positionY : CGFloat = 0.0{
+    public var positionY : CGFloat = 0.0{
         didSet{
             updatePosition()
         }
@@ -155,7 +155,7 @@ public class YWBubbleWindow: UIWindow {
     ///   - customView: 要显示的View
     ///   - margin: 外边距
     ///   - backBlock: 点击回调
-    init(customView: UIView, margin:UIEdgeInsets?, level:UIWindow.Level,backBlock:(()->Void)?) {
+    public init(customView: UIView, margin:UIEdgeInsets?, level:UIWindow.Level,backBlock:(()->Void)?) {
         super.init(frame: customView.bounds)
         if margin != nil {
             marginInsets = margin!
@@ -186,11 +186,11 @@ public class YWBubbleWindow: UIWindow {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func show() {
+    public func show() {
         self.isHidden = false
     }
     
-    func hidden() {
+    public func hidden() {
         self.isHidden = true
     }
     
@@ -198,7 +198,7 @@ public class YWBubbleWindow: UIWindow {
         tapBlock?()
     }
 
-    @objc func panEvent(pan:UIPanGestureRecognizer) {
+    @objc private func panEvent(pan:UIPanGestureRecognizer) {
         let point = pan.location(in: self)
         locationChange(point: point)
         if pan.state == UIGestureRecognizer.State.ended {
@@ -216,7 +216,7 @@ public class YWBubbleWindow: UIWindow {
 //        print("\n手指位置--->\(point) \n气泡中心--->\(center) \n当前安全偏移--->\(curentAreaInsets) \nKeyWindow--->\(YWKeyWindow.bounds) \n气泡大小--->\(bounds) \n结果--->\(newCenter)")
     }
     
-    func locationChangeEnded() {
+    private func locationChangeEnded() {
         var curentCenter = center
         if curentCenter.x > YWKeyWindow.bounds.size.width*0.5 {
             curentCenter.x = YWKeyWindow.bounds.size.width-bounds.size.width*0.5-curentAreaInsets.right
@@ -228,7 +228,7 @@ public class YWBubbleWindow: UIWindow {
         }
     }
     
-    func updatePosition() {
+    private func updatePosition() {
         var curentCenter = center
         if position == .Right {
             curentCenter.x = YWKeyWindow.bounds.size.width-bounds.size.width*0.5-curentAreaInsets.right
